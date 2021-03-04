@@ -15,7 +15,8 @@ class ListCoinsUseCase extends UseCase<ListCoinsUseCaseResponse, FoxbitWebSocket
     final StreamController<ListCoinsUseCaseResponse> controller = StreamController<ListCoinsUseCaseResponse>();
     
     try {
-      final List<Coin> list = await _repository.list(params);
+      final list = await _repository.list(params);
+      list.sort((a, b) => a.order.compareTo(b.order));
       final response = ListCoinsUseCaseResponse(list);
       controller.add(response);
       controller.close();

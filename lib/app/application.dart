@@ -8,7 +8,8 @@ class FoxbitApp extends StatelessWidget {
       title: 'Foxbit Test',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white
+        primaryColor: Colors.white,
+        scaffoldBackgroundColor: Colors.white,
       ),
       routes: appRoutes,
     );
